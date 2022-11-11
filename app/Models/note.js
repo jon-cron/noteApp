@@ -6,9 +6,8 @@ export class Note {
     this.title = data.title;
     this.color = data.color;
     this.text = data.text || "";
-    this.date = data.date
-      ? new Date(data.date)
-      : new Date().toLocaleDateString();
+    // this.change = new Date();
+    this.date = data.date ? new Date(data.date) : new Date();
   }
   get listTemplate() {
     return `
@@ -29,16 +28,20 @@ export class Note {
     <section class="row m-1 p-1 align-items-center">
               <div class="col-6">
                 <h1 style="color:${this.color}" >${this.title}</h1>
-                <h5>${this.date}</h5>
+                <h5>${this.date.toLocaleDateString()}</h5>
               </div>
               <div class="col-6 text-end">
                 <button class="btn btn-primary" onclick="app.notesController.saveChanges()" >Save Changes</button>
-                <button class="btn btn-danger" onclick="app.notesController.removeNote('${this.id}')" >Delete</button>
+                <button class="btn btn-danger" onclick="app.notesController.removeNote('${
+                  this.id
+                }')" >Delete</button>
                 <button class="btn border-success" onclick="app.notesController.closeActiveNote()" >Close</button>
               </div>
             </section>
             <section class="row">
-              <textarea class="textSection" placeholder="type..." name="text" id="text" cols="10" rows="25">${this.text}</textarea>
+              <textarea class="textSection" placeholder="type..." name="text" id="text" cols="10" rows="25">${
+                this.text
+              }</textarea>
             </section>
     `;
   }

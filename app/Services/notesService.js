@@ -22,7 +22,8 @@ class NotesService {
     let activeNote = appState.activeNote;
     activeNote.text = newNote;
     console.log(appState.activeNote);
-    activeNote.date = new Date().toLocaleDateString();
+    activeNote.date = new Date();
+    // activeNote.change = new Date();
     appState.activeNote = null;
   }
   closeActive() {

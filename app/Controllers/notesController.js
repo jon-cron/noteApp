@@ -35,6 +35,7 @@ export class NotesController {
     appState.on("notes", _drawNotes);
     appState.on("notes", _drawListTotal);
     appState.on("activeNote", _drawActiveNote);
+    appState.on("activeNote", _drawNotes);
   }
   // removeNote(noteId) {
   //   notesService.removeNote(noteId);
