@@ -31,7 +31,7 @@
       >
         <span class="ms-2">Jon's Notes</span>
         <button class="btn btn round border-light text-light" onclick="">
-          Note
+          Notes
         </button>
       </nav>
     </header>
@@ -55,6 +55,31 @@
                   <i class="mdi mdi-close text-danger"></i>
                 </button>
               </div> -->
+            </section>
+            <section class="row">
+              <div class="col-7 d-flex card m-1 p-1 bg-primary">
+                <form action="" onsubmit="app.notesController.addNote()">
+                  <div class="d-flex">
+                    <input
+                      name="title"
+                      id="title"
+                      class="m-1 p-0"
+                      type="text"
+                      placeholder="Title"
+                    />
+                    >
+                    <input
+                      name="color"
+                      type="color"
+                      class="form-control form-control-color"
+                      id="color"
+                      value="#563d7c"
+                      title="Choose your color"
+                    />
+                  </div>
+                  <button class="btn text-light border-light">Add Note</button>
+                </form>
+              </div>
             </section>
           </div>
         </div>

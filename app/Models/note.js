@@ -11,13 +11,13 @@ export class Note {
   get listTemplate() {
     return `
     <div
-                class="col-7 d-flex align-items-center justify-content-evenly p-1 m-1 border-dark note"
+                class="col-7 d-flex align-items-center justify-content-evenly p-1 m-1 selectable note"
               >
-              <div class="selectable d-flex align-items-end">
+              <div class="d-flex align-items-end">
                 <h3>Title: ${this.title}</h3>
                 <h5> color</h5>
                 </div>
-                <button class="btn border-danger">
+                <button class="btn border-danger" onclick="app.notesController.removeNote('${this.id}')">
                   <i class="mdi mdi-close text-danger"></i>
                 </button>
               </div>

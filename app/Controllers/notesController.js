@@ -11,5 +11,9 @@ function _drawNotes() {
 export class NotesController {
   constructor() {
     _drawNotes();
+    appState.on("notes", _drawNotes);
+  }
+  removeNote(noteId) {
+    notesService.removeNote(noteId);
   }
 }
