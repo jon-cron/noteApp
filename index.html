@@ -29,24 +29,27 @@
       <nav
         class="navbar navbar-dark navbar-expand bg-dark text-light d-flex justify-content-between"
       >
-        <span class="ms-2">Jon's Notes</span>
-        <button class="btn btn round border-light text-light" onclick="">
+        <span class="ms-2"><h1>Jon's Notes</h1></span>
+        <button
+          class="btn btn round border-light text-light"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
           Notes
         </button>
       </nav>
     </header>
-    <main>
+    <main class="bg-color">
       <div class="container-fluid">
         <div class="row">
           <!-- NOTE make left side off canvas -->
           <!-- NOTE left side here -->
           <div class="col-3">
-            <section class="row">
-              <h1>My Notes:</h1>
-            </section>
-            <section class="row" id="noteList">
-              <!-- NOTE list template below -->
-              <!-- <div
+            <!-- <section class="row" id="noteList"> -->
+            <!-- NOTE list template below -->
+            <!-- <div
                 class="col-9 d-flex align-items-center justify-content-evenly"
               >
                 <h3>Title</h3>
@@ -55,8 +58,8 @@
                   <i class="mdi mdi-close text-danger"></i>
                 </button>
               </div> -->
-            </section>
-            <section class="row">
+            <!-- </section> -->
+            <!-- <section class="row">
               <div class="col-7 d-flex card m-1 p-1 bg-primary">
                 <form action="" onsubmit="app.notesController.addNote()">
                   <div class="d-flex">
@@ -80,14 +83,62 @@
                   <button class="btn text-light border-light">Add Note</button>
                 </form>
               </div>
-            </section>
+            </section> -->
           </div>
+        </div>
+      </div>
+      <div
+        class="offcanvas offcanvas-start bg-light"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="offcanvas-header bg-primary text-dark">
+          <h2 id="offcanvasRightLabel">
+            My Notes <span id="listTotal"></span>
+          </h2>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <section class="row justify-content-center" id="noteList"></section>
+          <section class="row justify-content-center">
+            <div class="col-12 d-flex card m-1 p-1 bg-primary">
+              <form action="" onsubmit="app.notesController.addNote()">
+                <div class="d-flex">
+                  <input
+                    name="title"
+                    id="title"
+                    class="m-1 p-0"
+                    type="text"
+                    placeholder="Title"
+                    minlength="3"
+                    maxlength="15"
+                  />
+                  >
+                  <input
+                    name="color"
+                    type="color"
+                    class="form-control form-control-color"
+                    id="color"
+                    value="#563d7c"
+                    title="Choose your color"
+                  />
+                </div>
+                <button class="btn text-light border-light">Add Note</button>
+              </form>
+            </div>
+          </section>
         </div>
       </div>
     </main>
     <footer class="bg-dark text-light">
       <div class="text-center no-select">
-        <p><small>Write</small></p>
+        <p><small>Write Stuff</small></p>
       </div>
     </footer>
 

@@ -11,7 +11,7 @@ export class Note {
   get listTemplate() {
     return `
     <div
-                class="col-8 d-flex align-items-center justify-content-evenly p-1 m-1 selectable note"
+                class="col-12 d-flex align-items-center justify-content-evenly p-1 m-1 selectable note"
               >
               <div class="d-flex align-items-end">
                 <h3>Title: ${this.title}</h3>

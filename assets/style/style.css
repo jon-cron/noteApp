@@ -4,3 +4,6 @@
   border: 1px solid black;
   border-radius: 5px;
 }
+.bg-color {
+  background-color: rgba(172, 221, 236, 0.678);
+}
