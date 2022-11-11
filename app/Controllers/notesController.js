@@ -1,5 +1,6 @@
 import { appState } from "../AppState.js";
 import { notesService } from "../Services/notesService.js";
+import { getFormData } from "../Utils/FormHandler.js";
 import { setHTML } from "../Utils/Writer.js";
 
 function _drawNotes() {
@@ -15,5 +16,12 @@ export class NotesController {
   }
   removeNote(noteId) {
     notesService.removeNote(noteId);
+  }
+  addNote() {
+    window.event.preventDefault();
+    const form = window.event.target;
+    let noteData = getFormData(form);
+    // console.log(noteData);
+    notesService.addNote(noteData);
   }
 }

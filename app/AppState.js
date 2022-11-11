@@ -12,10 +12,12 @@ class AppState extends EventEmitter {
     new Note({
       title: "Note 1",
       text: "this is my first note",
+      color: "#178B14",
     }),
     new Note({
       title: "Note 2",
       text: "this is my second note",
+      color: "#14198B",
     }),
   ];
 }
