@@ -5,5 +5,18 @@
   border-radius: 5px;
 }
 .bg-color {
-  background-color: rgba(172, 221, 236, 0.678);
+  background-image: url(https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Ym9va3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
+  background-size: cover;
+  background-position: center;
+}
+.active {
+  background-color: white;
+  border: 1px solid black;
+}
+.hidden {
+  display: none !important;
+}
+.colorPicker {
+  height: 25px;
+  width: 25px;
 }

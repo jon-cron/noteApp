@@ -7,6 +7,7 @@ import { loadState, saveState } from "./Utils/Store.js";
 class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = loadState("values", [Value]);
+  activeNote = null;
 
   notes = loadState("notes", [Note]);
   // notes = [

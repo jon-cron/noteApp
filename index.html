@@ -21,35 +21,47 @@
     />
     <link rel="stylesheet" href="assets/style/main.css" />
     <link rel="stylesheet" href="assets/style/style.css" />
-    <title>noteApp</title>
+    <title>Jon's Notes</title>
   </head>
 
   <body>
     <header>
       <nav
-        class="navbar navbar-dark navbar-expand bg-dark text-light d-flex justify-content-between"
+        class="navbar navbar-dark navbar-expand bg-dark text-light d-flex justify-content-start"
       >
         <span class="ms-2"><h1>Jon's Notes</h1></span>
         <button
-          class="btn btn round border-light text-light"
+          class="btn btn round border-light text-light m-2"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight"
         >
-          Notes
+          Open Notes
         </button>
       </nav>
     </header>
-    <main class="bg-color">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- NOTE make left side off canvas -->
-          <!-- NOTE left side here -->
-          <div class="col-3">
-            <!-- <section class="row" id="noteList"> -->
-            <!-- NOTE list template below -->
-            <!-- <div
+    <main class="bg-color container-fluid">
+      <section class="row m-5 justify-content-center hidden" id="hidden">
+        <!-- NOTE make left side off canvas -->
+        <!-- NOTE left side here -->
+        <div class="col-12 col-lg-5 active card" id="activeNote">
+          <!-- NOTE activeTemplate here -->
+          <!-- <section class="row">
+              <div class="col-8">
+                <h1>Title color</h1>
+              </div>
+              <div class="col-4">
+                <h5>date</h5>
+                <button class="btn btn-primary">Save Changes</button>
+              </div>
+            </section>
+            <section class="row">
+              <textarea name="text" id="text" cols="30" rows="10"></textarea>
+            </section> -->
+          <!-- <section class="row" id="noteList"> -->
+          <!-- NOTE list template below -->
+          <!-- <div
                 class="col-9 d-flex align-items-center justify-content-evenly"
               >
                 <h3>Title</h3>
@@ -58,8 +70,8 @@
                   <i class="mdi mdi-close text-danger"></i>
                 </button>
               </div> -->
-            <!-- </section> -->
-            <!-- <section class="row">
+          <!-- </section> -->
+          <!-- <section class="row">
               <div class="col-7 d-flex card m-1 p-1 bg-primary">
                 <form action="" onsubmit="app.notesController.addNote()">
                   <div class="d-flex">
@@ -84,9 +96,8 @@
                 </form>
               </div>
             </section> -->
-          </div>
         </div>
-      </div>
+      </section>
       <div
         class="offcanvas offcanvas-start bg-light"
         tabindex="-1"
@@ -109,8 +120,9 @@
           <section class="row justify-content-center">
             <div class="col-12 d-flex card m-1 p-1 bg-primary">
               <form action="" onsubmit="app.notesController.addNote()">
-                <div class="d-flex">
+                <div class="d-flex align-items-center justify-content-evenly">
                   <input
+                    required
                     name="title"
                     id="title"
                     class="m-1 p-0"
@@ -119,17 +131,18 @@
                     minlength="3"
                     maxlength="15"
                   />
-                  >
                   <input
                     name="color"
                     type="color"
-                    class="form-control form-control-color"
+                    class="colorPicker"
                     id="color"
-                    value="#563d7c"
+                    value="#000000"
                     title="Choose your color"
                   />
+                  <button class="btn text-light border-light m-2">
+                    Add Note
+                  </button>
                 </div>
-                <button class="btn text-light border-light">Add Note</button>
               </form>
             </div>
           </section>
